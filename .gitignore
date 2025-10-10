@@ -1,23 +1,91 @@
-# dependencias
+# ==========================================
+# 🧱 DEPENDENCIAS Y ENTORNOS
+# ==========================================
+# Node (Frontend)
 node_modules/
+Frontend/node_modules/
 
-# build
+# Python (Backend)
+Backend/__pycache__/
+Backend/.venv/
+Backend/venv/
+Backend/env/
+Backend/.env
+*.py[cod]
+
+# ==========================================
+# 🏗️ BUILDS Y DISTRIBUCIONES
+# ==========================================
 build/
 dist/
+Frontend/build/
+Frontend/dist/
+Backend/build/
+Backend/dist/
 
-# entorno
+# ==========================================
+# ⚙️ ARCHIVOS DE ENTORNO
+# ==========================================
 .env
 .env.local
 .env.*.local
+Frontend/.env
+Backend/.env
 
-# logs
+# ==========================================
+# 🪵 LOGS
+# ==========================================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+Backend/*.log
 
-# sistema
+# ==========================================
+# 💻 ARCHIVOS DEL SISTEMA
+# ==========================================
 .DS_Store
 Thumbs.db
 
-# tests / coverage
+# ==========================================
+# 🧪 TESTS Y COBERTURA
+# ==========================================
 coverage/
+Frontend/coverage/
+Backend/coverage/
+Backend/.pytest_cache/
+Backend/htmlcov/
+
+# ==========================================
+# 🧠 IDE / CONFIGS TEMPORALES
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.tsbuildinfo
+*.pid
+
+# ==========================================
+# 🐍 PYTHON ESPECÍFICO
+# ==========================================
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+*.egg-info/
+*.eggs/
+*.manifest
+*.spec
+instance/
+.envrc
+
+# ==========================================
+# 🚀 OPCIONAL (si usas Docker, uvicorn, etc.)
+# ==========================================
+.dockerignore
+Dockerfile
+docker-compose.yml
