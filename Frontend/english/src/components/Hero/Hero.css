@@ -1,12 +1,30 @@
 .hero {
-  padding: 120px 20px 100px;
+  padding: 140px 20px 100px;
   text-align: center;
+  background: linear-gradient(180deg, #fff, #f9fafb 60%);
+  position: relative;
+  overflow: hidden;
+}
 
+/* Sutil halo de luz en el fondo */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(240,240,255,0.8), transparent 70%);
+  z-index: 0;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
   margin: 0 auto;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 .hero h1 {
@@ -42,7 +60,7 @@
   background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -58,7 +76,7 @@
 .btn-outline {
   background-color: transparent;
   color: #000;
-  border: 1px solid #000;
+  border: 1.5px solid #000;
 }
 
 .btn-outline:hover {
@@ -67,8 +85,72 @@
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/* === SECTION BELOW HERO === */
+.hero-exercises {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.hero-exercises h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.exercise-types {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.type-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 20px 28px;
+  width: 120px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.type-card span {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.type-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* === Animación sutil === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 80px;
+  }
+
   .hero h1 {
     font-size: 2.4rem;
   }
@@ -79,5 +161,10 @@
 
   .hero-buttons {
     flex-direction: column;
+  }
+
+  .type-card {
+    width: 100px;
+    padding: 16px;
   }
 }
